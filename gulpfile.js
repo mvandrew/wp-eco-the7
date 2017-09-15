@@ -138,3 +138,12 @@ gulp.task('sass', function () {
         .pipe( reload({stream:true}) )
         .pipe( notify({ message: 'Styles task complete', onLast: true }) );
 });
+
+
+gulp.task( 'watch', ['theme', 'fonts', 'vendor-css', 'sass'], function () {
+
+    gulp.watch( './src/sass/**/*.scss', ['sass'] );
+
+});
+
+gulp.task("default", ["watch"]);

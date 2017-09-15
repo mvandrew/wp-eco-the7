@@ -1,8 +1,8 @@
-node_modules
-src/vendor
-css
-fonts
+/node_modules
+/src/vendor
+/css
+/fonts
 
-package-lock.json
-style.css
-screenshot.png
+/package-lock.json
+/style.css
+/screenshot.png
