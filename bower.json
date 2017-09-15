@@ -1,0 +1,21 @@
+{
+  "name": "wp-eco-the7",
+  "description": "EcoSaltLamps.ru WordPress Theme (The7 child theme)",
+  "main": "index.php",
+  "authors": [
+    "Andrey Mishchenko"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.msav.ru/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./src/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "matchHeight": "^0.7.2"
+  }
+}
