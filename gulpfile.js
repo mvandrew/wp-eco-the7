@@ -140,7 +140,7 @@ gulp.task('sass', function () {
 });
 
 
-gulp.task( 'watch', ['theme', 'fonts', 'vendor-css', 'sass'], function () {
+gulp.task( 'watch', ['theme', 'fonts', 'vendor-css', 'sass', 'browser-sync'], function () {
 
     gulp.watch( './src/sass/**/*.scss', ['sass'] );
 
