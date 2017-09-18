@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+//
+// Стили отдельных эелентов
+//
+ul.container-6040 {
+  display: block;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: .6px;
+  margin-bottom: .6em;
+
+  > li {
+    display: block;
+    float: left;
+
+    > div {
+      display: block;
+      margin: .6em;
+    }
+
+    &:first-child {
+      width: 60%;
+    }
+    &:last-child {
+      width: 40%;
+    }
+  }
+} // ul.container-6040
