@@ -13,7 +13,9 @@ var gulp                = require("gulp"),
     autoprefixer        = require("gulp-autoprefixer"),
     gcmq                = require('gulp-group-css-media-queries'),
     browserSync         = require('browser-sync'),
-    reload              = browserSync.reload;
+    reload              = browserSync.reload,
+    wpPot               = require('gulp-wp-pot'),
+    sort                = require('gulp-sort');
 
 
 /**
@@ -50,6 +52,40 @@ function get_version() {
     var json = JSON.parse(fs.readFileSync("./package.json"));
     return json.version;
 }
+
+
+/**
+ * Формирование файла переводов родительской темы,
+ * ибо эта поделака по неведомой причине нормально
+ * не локализована.
+ */
+gulp.task( 'makepot-parent', function () {
+    return gulp.src( '../dt-the7/**/*.php' )
+        .pipe(sort())
+        .pipe(wpPot({
+            domain: 'presscore',
+            destFile: 'presscore.pot',
+            package: 'The7',
+            team: 'Andrey Mishchenko <msav@msav.ru>'
+        }))
+        .pipe(gulp.dest('../dt-the7/languages/presscore.pot'));
+} );
+
+
+/**
+ * Формирование файла переводов текущей темы.
+ */
+gulp.task( 'makepot', function () {
+    return gulp.src( './**/*.php' )
+        .pipe(sort())
+        .pipe(wpPot({
+            domain: 'eco-the7',
+            destFile: 'eco-the7.pot',
+            package: 'Eco The7',
+            team: 'Andrey Mishchenko <msav@msav.ru>'
+        }))
+        .pipe(gulp.dest('./languages/eco-the7.pot'));
+} );
 
 
 /**

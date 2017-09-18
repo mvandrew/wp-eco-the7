@@ -19,6 +19,60 @@ if ( ! function_exists( 'ecothe7_is_woocommerce_activated' ) ) {
 
 		return class_exists( 'WooCommerce' ) ? true : false;
 
-		// storemsav_is_woocommerce_activated
+		// ecothe7_is_woocommerce_activated
+	}
+}
+
+if ( !function_exists('ecothe7_enqueue_scripts') ) {
+	/**
+	 * Enqueue Scripts Hook function
+	 *
+	 * @return void
+	 */
+	function ecothe7_enqueue_scripts() {
+
+		/**
+		 * Styles
+		 */
+		wp_enqueue_style(
+			'ecothe7-vendor-style',
+			_ET7_STYLESHEETS . '/vendor-css.min.css',
+			array('style'),
+			_ET7_VERSION
+		);
+
+		wp_enqueue_style(
+			'ecothe7-style',
+			_ET7_STYLESHEETS . '/style.min.css',
+			array('style', 'ecothe7-vendor-style'),
+			_ET7_VERSION
+		);
+
+		/**
+		 *
+		 */
+		wp_dequeue_style( 'dt-awsome-fonts' );
+
+		// ecothe7_enqueue_scripts
+	}
+}
+
+
+
+if ( !function_exists( 'ecothe7_setup') ) {
+	/**
+	 * After Setup Theme Hook
+	 *
+	 * @return void
+	 */
+	function ecothe7_setup () {
+
+		/**
+		 * Make theme available for translation.
+		 * Translations can be filed in the /languages/ directory.
+		 */
+		load_theme_textdomain( 'eco-the7', _ET7_CHILD_DIR . '/languages' );
+
+		// ecothe7_setup
 	}
 }
