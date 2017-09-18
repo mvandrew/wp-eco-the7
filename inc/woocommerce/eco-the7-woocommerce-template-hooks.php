@@ -24,11 +24,15 @@ add_action( 'woocommerce_breadcrumb_defaults',                  'ecothe7_woocomm
  * @see ecothe7_loop_columns()
  * @see ecothe7_loop_shop_per_page()
  *
+ * @see ecothe7_wc_output_related_products_args()
+ *
  * @see ecothe7_product_columns_wrapper_close()
  * @see ecothe7_product_columns_wrapper()
  */
 add_filter( 'loop_shop_columns',                                'ecothe7_loop_columns' );
 add_filter( 'loop_shop_per_page',                               'ecothe7_loop_shop_per_page',                       20 );
+
+add_filter( 'woocommerce_output_related_products_args',         'ecothe7_wc_output_related_products_args',          20 );
 
 add_action( 'woocommerce_after_shop_loop',                      'ecothe7_product_columns_wrapper_close',            40 );
 add_action( 'woocommerce_before_shop_loop',                     'ecothe7_product_columns_wrapper',                  40 );

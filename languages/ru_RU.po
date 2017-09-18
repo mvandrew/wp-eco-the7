@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Eco The7\n"
-"POT-Creation-Date: 2017-09-18 14:42+0300\n"
+"POT-Creation-Date: 2017-09-18 23:28+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Andrey Mishchenko <msav@msav.ru>\n"
@@ -21,6 +21,45 @@ msgstr ""
 "X-Generator: Poedit 2.0.1\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: inc/classes/class-eco-the7-counters.php:114
+msgid "Counters IDs"
+msgstr "Счётчики аналитики"
+
+#: inc/classes/class-eco-the7-counters.php:126
+msgid "Yandex Metrika ID"
+msgstr "Яндекс Метрика ИД"
+
+#: inc/classes/class-eco-the7-counters.php:139
+msgid "Yandex Webmaster ID"
+msgstr "Яндекс Вебмастер ИД"
+
+#: inc/classes/class-eco-the7-counters.php:152
+msgid "Google Analytics ID"
+msgstr "Google Analytics ИД"
+
+#: inc/classes/class-eco-the7-counters.php:165
+msgid "Google Webmaster ID"
+msgstr "Google Webmaster ИД"
+
+#: inc/customizer.php:28
+#, php-format
+msgid "&copy; %1$s &mdash; <a href=\"%2$s\">%3$s</a>, All Rights Reserved."
+msgstr "&copy; %1$s &mdash; <a href=\"%2$s\">%3$s</a>."
+
+#: inc/customizer.php:37
+#, php-format
+msgid "<a href=\"%1$s\">Designed by</a> %2$s"
+msgstr "<a href=\"%1$s\">Создание сайта</a> %2$s"
+
+#: inc/customizer.php:65
+msgid "Change the Additional Options from here as you want"
+msgstr ""
+"Измените дополнительные параметры под нормальную работу Вашего сайта"
+
+#: inc/customizer.php:67
+msgid "Additional Options"
+msgstr "Дополнительные параметры"
 
 #: inc/woocommerce/eco-the7-woocommerce-template-functions.php:21
 msgid "Home"

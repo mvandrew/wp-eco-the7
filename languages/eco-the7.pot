@@ -14,6 +14,42 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: inc/customizer.php:28
+msgid "&copy; %1$s &mdash; <a href=\"%2$s\">%3$s</a>, All Rights Reserved."
+msgstr ""
+
+#: inc/customizer.php:37
+msgid "<a href=\"%1$s\">Designed by</a> %2$s"
+msgstr ""
+
+#: inc/customizer.php:65
+msgid "Change the Additional Options from here as you want"
+msgstr ""
+
+#: inc/customizer.php:67
+msgid "Additional Options"
+msgstr ""
+
+#: inc/classes/class-eco-the7-counters.php:114
+msgid "Counters IDs"
+msgstr ""
+
+#: inc/classes/class-eco-the7-counters.php:126
+msgid "Yandex Metrika ID"
+msgstr ""
+
+#: inc/classes/class-eco-the7-counters.php:139
+msgid "Yandex Webmaster ID"
+msgstr ""
+
+#: inc/classes/class-eco-the7-counters.php:152
+msgid "Google Analytics ID"
+msgstr ""
+
+#: inc/classes/class-eco-the7-counters.php:165
+msgid "Google Webmaster ID"
+msgstr ""
+
 #: inc/woocommerce/eco-the7-woocommerce-template-functions.php:21
 msgid "Home"
 msgstr ""

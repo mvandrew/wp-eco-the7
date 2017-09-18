@@ -37,8 +37,8 @@ ul.container-6040 > li:last-child {
 .woocommerce-page .upsells.products ul li.product,
 .woocommerce ul.products li.product,
 .woocommerce-page ul.products li.product {
-  width: -webkit-calc(100% / 3);
-  width: calc(100% / 3);
+  width: -webkit-calc(100% / 3) !important;
+  width: calc(100% / 3) !important;
 }
 
 .woocommerce .related ul.products li.product .thumbnail_block,
@@ -71,4 +71,54 @@ ul.container-6040 > li:last-child {
 .woocommerce-page ul.products li.product h2 {
   line-height: 1.65;
   font-weight: 400;
+}
+
+.widget_product_search label {
+  display: none;
+}
+
+.sidebar-content {
+  font-size: .9em;
+}
+
+.sidebar-content .widget-title {
+  font-size: 1.4em;
+}
+
+.flexslider ul.slides li .psc-prod-container .img-wrap {
+  position: relative;
+}
+
+.flexslider ul.slides li .psc-prod-container .img-wrap img {
+  width: 215px;
+  height: 215px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+#branding-bottom {
+  display: block;
+  float: none;
+}
+
+ul.ecothe7_credits {
+  display: block;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 1.8em;
+  margin-bottom: 1.8em;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+}
+
+ul.ecothe7_credits li {
+  display: block;
+  float: left;
+  width: 50%;
+}
+
+ul.ecothe7_credits li:last-child {
+  text-align: right;
 }

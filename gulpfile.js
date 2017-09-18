@@ -18,7 +18,40 @@ var gulp                = require("gulp"),
     sort                = require('gulp-sort'),
     uglify              = require('gulp-uglify'),
     stripComments       = require('gulp-strip-comments'), // Удаление js комментариев
-    coffee              = require('gulp-coffee');
+    coffee              = require('gulp-coffee'),
+    del                 = require('del'),
+    zip                 = require('gulp-zip'),
+    runSequence         = require('run-sequence');
+
+
+var build_files = [
+    '**',
+    '.htaccess',
+    '!node_modules',
+    '!node_modules/**',
+    '!bower_components',
+    '!bower_components/**',
+    '!dist',
+    '!dist/**',
+    '!sass',
+    '!sass/**',
+    '!.git',
+    '!.git/**',
+    '!package.json',
+    '!package-lock.json',
+    '!bower.json',
+    '!**/*.arj',
+    '!**/*.rar',
+    '!**/*.zip',
+    '!.gitignore',
+    '!gulpfile.js',
+    '!.editorconfig',
+    '!.jshintrc',
+    '!src',
+    '!src/**'
+];
+
+var themeSlug = "eco-the7";
 
 
 /**
@@ -229,4 +262,27 @@ gulp.task( 'watch', ['makepot', 'theme', 'fonts', 'vendor-css', 'vendor-js', 'sa
 
 });
 
-gulp.task("default", ["watch"]);
+gulp.task( 'build-clean', function() {
+    del( ['dist/**/*'] );
+});
+
+gulp.task( 'build-copy', function() {
+    return gulp.src( build_files )
+        .pipe( gulp.dest('dist/' + themeSlug) );
+} );
+
+gulp.task( 'build-zip', function() {
+    return gulp.src( 'dist/**/*' )
+        .pipe( zip(themeSlug + '.zip') )
+        .pipe( gulp.dest('dist') );
+} );
+
+gulp.task( 'build-delete', function() {
+    del(['dist/**/*', '!dist/' + themeSlug + '.zip']);
+} );
+
+gulp.task( 'build', function(callback) {
+    runSequence('build-clean', 'build-copy', 'build-zip', 'build-delete');
+} );
+
+gulp.task( "default", ["watch"] );

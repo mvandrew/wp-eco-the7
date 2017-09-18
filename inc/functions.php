@@ -85,6 +85,10 @@ if ( !function_exists( 'ecothe7_setup') ) {
 		 */
 		load_theme_textdomain( 'eco-the7', _ET7_CHILD_DIR . '/languages' );
 
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
+
 		// ecothe7_setup
 	}
 }

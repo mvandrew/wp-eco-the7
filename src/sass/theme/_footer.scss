@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+//
+// Элементы подвала сайта
+//
+
+#branding-bottom {
+  display: block;
+  float: none;
+}
+ul.ecothe7_credits {
+  display: block;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 1.8em;
+  margin-bottom: 1.8em;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+
+  li {
+    display: block;
+    float: left;
+    width: 50%;
+    &:last-child {
+      text-align: right;
+    }
+  }
+} // ul.ecothe7_credits

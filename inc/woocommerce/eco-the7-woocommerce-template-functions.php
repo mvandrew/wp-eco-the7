@@ -116,3 +116,16 @@ if ( ! function_exists( 'ecothe7_template_loop_product_thumbnail' ) ) {
 		echo "<div class=\"thumbnail_block\" $style></div>";
 	}
 }
+
+
+if ( !function_exists('ecothe7_wc_output_related_products_args') ) {
+	function ecothe7_wc_output_related_products_args( $args ) {
+
+		$args['posts_per_page'] = 3; // количество "Похожих товаров"
+		$args['columns'] = 3; // количество колонок
+
+		return $args;
+
+		// ecothe7_wc_output_related_products_args
+	}
+}

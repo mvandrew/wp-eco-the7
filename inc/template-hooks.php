@@ -17,3 +17,20 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
  */
 add_action( 'wp_enqueue_scripts',                   'ecothe7_enqueue_scripts',          90 );
 add_action( 'after_setup_theme',                    'ecothe7_setup' );
+add_action( 'customize_register',                   'ecothe7_customize_register' );
+
+
+/**
+ * Parent theme customization
+ *
+ * @see ecothe7_presscore_credits()
+ */
+add_action( 'presscore_credits',                    'ecothe7_presscore_credits' );
+
+
+/**
+ * Header Hooks
+ *
+ * @see ecothe7_head()
+ */
+add_action( 'wp_head',                              'ecothe7_head',                   10 );

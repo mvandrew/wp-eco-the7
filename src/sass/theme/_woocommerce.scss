@@ -14,7 +14,7 @@
 .woocommerce-page .upsells.products ul li.product,
 .woocommerce ul.products li.product,
 .woocommerce-page ul.products li.product {
-  width: calc(100% / 3);
+  width: calc(100% / 3) !important;
 
   .thumbnail_block {
     display: block;
@@ -28,5 +28,41 @@
   h2 {
     line-height: 1.65;
     font-weight: 400;
+  }
+}
+
+
+
+//
+// Блок поиска по товарам
+//
+.widget_product_search {
+  label {
+    display: none;
+  }
+}
+
+
+
+//
+// Стили основного сайдбара
+//
+.sidebar-content {
+  font-size: .9em;
+  .widget-title {
+    font-size: 1.4em;
+  }
+}
+
+
+//
+// Обрезка изображения в слайдере товаров: woocommerce-product-slider
+//
+.flexslider ul.slides li .psc-prod-container .img-wrap {
+  position: relative;
+  img {
+    width: 215px;
+    height: 215px;
+    object-fit: cover;
   }
 }
