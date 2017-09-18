@@ -49,6 +49,18 @@ if ( !function_exists('ecothe7_enqueue_scripts') ) {
 		);
 
 		/**
+		 * Scripts
+		 */
+		wp_enqueue_script( 'ecothe7-vendor_script',
+			_ET7_SCRIPTS . '/vendor-js.min.js',
+			array( 'jquery' ),
+			_ET7_VERSION );
+		wp_enqueue_script( 'ecothe7-script',
+			_ET7_SCRIPTS . '/script.min.js',
+			array( 'jquery', 'ecothe7-vendor_script' ),
+			_ET7_VERSION );
+
+		/**
 		 *
 		 */
 		wp_dequeue_style( 'dt-awsome-fonts' );

@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+//
+// Изменение стилей элементов WooCommerce
+//
+
+.woocommerce .related ul.products li.product,
+.woocommerce-page .related ul.products li.product,
+.woocommerce .upsells.products ul.products li.product,
+.woocommerce-page .upsells.products ul.products li.product,
+.woocommerce .related ul li.product,
+.woocommerce-page .related ul li.product,
+.woocommerce .upsells.products ul li.product,
+.woocommerce-page .upsells.products ul li.product,
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+  width: calc(100% / 3);
+
+  .thumbnail_block {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    height: 256px;
+  }
+
+  h2 {
+    line-height: 1.65;
+    font-weight: 400;
+  }
+}

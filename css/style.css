@@ -26,3 +26,49 @@ ul.container-6040 > li:first-child {
 ul.container-6040 > li:last-child {
   width: 40%;
 }
+
+.woocommerce .related ul.products li.product,
+.woocommerce-page .related ul.products li.product,
+.woocommerce .upsells.products ul.products li.product,
+.woocommerce-page .upsells.products ul.products li.product,
+.woocommerce .related ul li.product,
+.woocommerce-page .related ul li.product,
+.woocommerce .upsells.products ul li.product,
+.woocommerce-page .upsells.products ul li.product,
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+  width: -webkit-calc(100% / 3);
+  width: calc(100% / 3);
+}
+
+.woocommerce .related ul.products li.product .thumbnail_block,
+.woocommerce-page .related ul.products li.product .thumbnail_block,
+.woocommerce .upsells.products ul.products li.product .thumbnail_block,
+.woocommerce-page .upsells.products ul.products li.product .thumbnail_block,
+.woocommerce .related ul li.product .thumbnail_block,
+.woocommerce-page .related ul li.product .thumbnail_block,
+.woocommerce .upsells.products ul li.product .thumbnail_block,
+.woocommerce-page .upsells.products ul li.product .thumbnail_block,
+.woocommerce ul.products li.product .thumbnail_block,
+.woocommerce-page ul.products li.product .thumbnail_block {
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 256px;
+}
+
+.woocommerce .related ul.products li.product h2,
+.woocommerce-page .related ul.products li.product h2,
+.woocommerce .upsells.products ul.products li.product h2,
+.woocommerce-page .upsells.products ul.products li.product h2,
+.woocommerce .related ul li.product h2,
+.woocommerce-page .related ul li.product h2,
+.woocommerce .upsells.products ul li.product h2,
+.woocommerce-page .upsells.products ul li.product h2,
+.woocommerce ul.products li.product h2,
+.woocommerce-page ul.products li.product h2 {
+  line-height: 1.65;
+  font-weight: 400;
+}

@@ -38,6 +38,7 @@ define( '_ET7_TEMPLATE_ELEMENTS_DIR',       _ET7_CHILD_DIR . '/template-elements
 define( '_ET7_PARENT_URI',                  get_template_directory_uri() );
 define( '_ET7_CHILD_URI',                   get_stylesheet_directory_uri() );
 define( '_ET7_STYLESHEETS',                 _ET7_CHILD_URI . '/css' );
+define( '_ET7_SCRIPTS',                     _ET7_CHILD_URI . '/js' );
 
 
 // ------------------------------------------

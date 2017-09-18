@@ -15,7 +15,32 @@ var gulp                = require("gulp"),
     browserSync         = require('browser-sync'),
     reload              = browserSync.reload,
     wpPot               = require('gulp-wp-pot'),
-    sort                = require('gulp-sort');
+    sort                = require('gulp-sort'),
+    uglify              = require('gulp-uglify'),
+    stripComments       = require('gulp-strip-comments'), // Удаление js комментариев
+    coffee              = require('gulp-coffee');
+
+
+/**
+ * Компиляция coffee-script файлов
+ */
+gulp.task('coffee', function() {
+    gulp.src( './src/coffee/**/*.coffee' )
+        .pipe( plumber({ errorHandler: function(err) {
+            notify.onError({
+                title: "Gulp error in " + err.plugin,
+                message:  err.toString()
+            })(err);
+        }}) )
+        .pipe( coffee({bare: true}) )
+        .pipe( gulp.dest('./js/') )
+        .pipe( uglify() )
+        .pipe( rename({suffix: '.min'}) )
+        .pipe( gulp.dest('./js/') )
+        .pipe( reload({stream:true}) )
+        .pipe( notify({ message: 'Javascript task complete', onLast: true }) );
+});
+
 
 
 /**
@@ -152,6 +177,27 @@ gulp.task('vendor-css', function () {
 });
 
 
+/**
+ * Сборка скриптов поставщиков
+ */
+gulp.task('vendor-js', function () {
+    return gulp.src([
+        './src/vendor/matchHeight/dist/jquery.matchHeight-min.js'
+        ])
+        .pipe( plumber({ errorHandler: function(err) {
+            notify.onError({
+                title: "Gulp error in " + err.plugin,
+                message:  err.toString()
+            })(err);
+        }}) )
+        .pipe( stripComments() )
+        .pipe( concat('vendor-js.min.js') )
+        .pipe( uglify() )
+        .pipe( gulp.dest('./js/') )
+        .pipe( notify({ message: 'Vendor Javascripts task complete', onLast: true }) );
+});
+
+
 
 /**
  * Компиляция стилей оформления
@@ -176,9 +222,10 @@ gulp.task('sass', function () {
 });
 
 
-gulp.task( 'watch', ['theme', 'fonts', 'vendor-css', 'sass', 'browser-sync'], function () {
+gulp.task( 'watch', ['makepot', 'theme', 'fonts', 'vendor-css', 'vendor-js', 'sass', 'coffee', 'browser-sync'], function () {
 
     gulp.watch( './src/sass/**/*.scss', ['sass'] );
+    gulp.watch( './src/coffee/**/*.coffee', ['coffee'] );
 
 });
 
